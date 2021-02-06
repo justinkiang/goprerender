@@ -1,4 +1,4 @@
-module github.com/vishr/prerender
+module github.com/justinkiang/goprerender
 
 go 1.13
 

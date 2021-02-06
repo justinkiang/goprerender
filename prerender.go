@@ -167,6 +167,9 @@ func (p *Prerender) buildURL(or *http.Request) string {
 func (p *Prerender) PreRenderHandler(rw http.ResponseWriter, or *http.Request) {
 	client := &http.Client{}
 
+	if strings.HasPrefix(or.URL.Path, "/share") {
+		or.URL.Path = "/share/generic"
+	}
 	req, err := http.NewRequest("GET", p.buildURL(or), nil)
 	e.Check(err)
 
